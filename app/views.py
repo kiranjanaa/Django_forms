@@ -25,6 +25,8 @@ def insert_Topic(request):
                 return HttpResponse(f'{tname} data is inserted')
             else:
                 return HttpResponse(f'{tname} is all ready present')
+        else:
+            return HttpResponse('Invalid data')
     return render(request,'inset_Topicform.html',d)
 
 
@@ -42,7 +44,9 @@ def insert_Webpage(request):
             if WTO[1]:
                 return HttpResponse(f'{tname} data is inserted')
             else:
-                return HttpResponse(f'{tname} is all ready present') 
+                return HttpResponse(f'{tname} is all ready present')
+        else:
+            return HttpResponse('invalid data') 
     return render(request,'insert_Webpageform.html',d) 
 
 def insert_access(request):
@@ -59,5 +63,7 @@ def insert_access(request):
             if ATO[1]:  
                 return HttpResponse(f'{autor} data is inserted')
             else:
-                return HttpResponse(f'{autor} is all ready present')    
+                return HttpResponse(f'{autor} is all ready present') 
+        else:
+            return HttpResponse(f' data is invalid')   
     return render(request,'insert_AccessRecord.html',d)
